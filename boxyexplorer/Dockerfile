@@ -21,7 +21,10 @@ ADD manage.py /code
 ADD static/ /code/static
 ADD explorer/ /code/explorer
 ADD grinexplorer/ /code/grinexplorer
-
+EXPOSE 80
 # Define our command to be run when launching the container
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "migrate"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+
+
 

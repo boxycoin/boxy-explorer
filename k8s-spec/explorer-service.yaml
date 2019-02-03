@@ -6,7 +6,7 @@ spec:
   type: ClusterIP
   ports:
   - name: "explorer-service"
-    port: 8000
+    port: 80
     targetPort: 8000
   selector:
     app: explorer
@@ -19,9 +19,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: "explorer-service"
-    port: 8001
+    port: 8000
     targetPort: 8000
-    volumes:
-      - .:/code
   selector:
     app: explorer
