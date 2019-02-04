@@ -19,7 +19,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: "explorer-service"
-    port: 8000
+    port: 8001
     targetPort: 8000
   selector:
     app: explorer
