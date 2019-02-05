@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: explorer
+spec:
+  type: ClusterIP
+  ports:
+  - name: "explorer-service"
+    port: 80
+    targetPort: 8000
+  selector:
+    app: explorer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: explorer-external
+spec:
+  type: LoadBalancer
+  ports:
+  - name: "explorer-service"
+    port: 8001
+    targetPort: 8000
+  selector:
+    app: explorer
